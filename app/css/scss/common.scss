@@ -8,6 +8,8 @@ body {
 
   overflow: hidden;
 
+  @include user-select('none');
+
   #content-wraper {
     width: 100%;
     height: 100%;
