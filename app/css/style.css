@@ -1,0 +1,197 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300&subset=latin,cyrillic-ext);
+@-webkit-keyframes show-modal {
+  0% {
+    top: -450px; }
+  100% {
+    top: 10vh; } }
+@-moz-keyframes show-modal {
+  0% {
+    top: -450px; }
+  100% {
+    top: 10vh; } }
+@-o-keyframes show-modal {
+  0% {
+    top: -450px; }
+  100% {
+    top: 10vh; } }
+@keyframes show-modal {
+  0% {
+    top: -450px; }
+  100% {
+    top: 10vh; } }
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #FAFAFA;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+  body #content-wraper {
+    width: 100%;
+    height: 100%; }
+
+#greeting {
+  width: 100%;
+  height: 100%; }
+  #greeting .auth {
+    width: 100%;
+    height: 50px; }
+    #greeting .auth a {
+      display: block;
+      float: right;
+      width: 80px;
+      height: 85%;
+      border-radius: 20px;
+      border: 3px solid #05abf2;
+      margin: 5px 10px 5px 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #f24438;
+      font-size: 24px;
+      font-weight: bolder;
+      text-align: center;
+      line-height: 40px;
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      -o-transition: all ease 0.5s;
+      transition: all ease 0.5s; }
+    #greeting .auth a:hover {
+      box-shadow: inset 0 50px 0 0 #05abf2;
+      color: #fff;
+      font-weight: bolder;
+      cursor: pointer; }
+  #greeting .greeting-circle {
+    width: 50%;
+    background-color: #05abf2;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative; }
+    #greeting .greeting-circle div.content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #greeting .greeting-circle div.content span {
+        color: white;
+        font-weight: lighter;
+        font-size: 68px; }
+  #greeting .greeting-circle:before {
+    content: "";
+    display: block;
+    padding-top: 100%; }
+
+body.unauthorized {
+  background-color: #FAFAFA; }
+  body.unauthorized header {
+    width: 100%;
+    height: 50px; }
+    body.unauthorized header nav {
+      width: 40%;
+      height: 100%;
+      float: right;
+      font-weight: lighter;
+      font-size: 20px; }
+      body.unauthorized header nav a:not(#auth) {
+        display: none; }
+      body.unauthorized header nav a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+        float: right;
+        text-decoration: none;
+        color: white;
+        border-radius: 20px;
+        background-color: #05abf2;
+        opacity: 0.8; }
+        body.unauthorized header nav a:hover {
+          cursor: pointer;
+          background-color: #05abf2;
+          opacity: 1; }
+  body.unauthorized footer {
+    display: none; }
+
+#modal-window {
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  -webkit-animation: show-modal 0.3s forwards;
+  -moz-animation: show-modal 0.3s forwards;
+  -o-animation: show-modal 0.3s forwards;
+  animation: show-modal 0.3s forwards; }
+
+#modal-auth {
+  background-color: #3949ab;
+  width: 600px;
+  height: 450px;
+  position: absolute;
+  left: 50%;
+  margin-left: -300px;
+  border: 5px solid #05abf2;
+  -webkit-animation: show-modal 0.6s forwards;
+  -moz-animation: show-modal 0.6s forwards;
+  -o-animation: show-modal 0.6s forwards;
+  animation: show-modal 0.6s forwards; }
+  #modal-auth nav {
+    width: 100%;
+    height: 50px;
+    background-color: #283593; }
+    #modal-auth nav a.active {
+      background-color: #3949ab; }
+    #modal-auth nav a {
+      display: block;
+      line-height: 50px;
+      width: 47%;
+      height: 100%;
+      float: left;
+      color: #fff;
+      font-weight: lighter;
+      font-size: 32px;
+      cursor: pointer;
+      padding-left: 3%; }
+  #modal-auth div.title {
+    width: 100%;
+    height: 150px; }
+    #modal-auth div.title span {
+      color: #fff;
+      display: block; }
+    #modal-auth div.title span.level-01 {
+      padding-top: 10px;
+      font-size: 58px;
+      padding-left: 10px; }
+    #modal-auth div.title span.level-02 {
+      padding-top: 10px;
+      padding-right: 10px;
+      font-size: 24px;
+      text-align: right;
+      text-transform: uppercase;
+      font-weight: lighter; }
+  #modal-auth form {
+    width: 90%;
+    margin: 0 auto; }
+    #modal-auth form input, #modal-auth form button {
+      outline: none;
+      border: none; }
+    #modal-auth form input {
+      display: block;
+      width: 95%;
+      height: 50px;
+      font-size: 24px;
+      margin: 15px 0;
+      padding-left: 5%; }
+    #modal-auth form button {
+      width: 40%;
+      height: 70px;
+      background-color: #ff80ab;
+      font-size: 34px;
+      cursor: pointer; }
+
+/*# sourceMappingURL=style.css.map */

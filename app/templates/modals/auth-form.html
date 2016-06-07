@@ -1,0 +1,17 @@
+<div id='modal-auth'>
+  <nav>
+    <a class='active'>Login</a>
+    <a>Registartion</a>
+  </nav>
+  <div>
+  <div class='title'>
+    <span class='level-01'>Auth on platform</span>
+    <span class='level-02'>Enter your's data in form and enter to site.</span>
+  </div>
+  <form>
+      <input type='text' placeholder='Username' required ng-model='username'></input>
+      <input type='password' placeholder='Password' required ng-model='password'></input>
+      <button ng-click='login(username, password)'>Login</button>
+  </form>
+  </div>
+</div>
