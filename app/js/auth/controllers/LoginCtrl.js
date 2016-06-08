@@ -6,8 +6,6 @@ app.controller('LoginCtrl',
       return $resource(url);
     }
 
-    $scope.$emit('backgroundLayer:show');
-
     $scope.switch = 'login';
 
     $scope.switchPanel = function(panel) {
@@ -22,6 +20,8 @@ app.controller('LoginCtrl',
           if (data.auth) {
             $rootScope.authUser = username;
             $scope.$emit('backgroundLayer:hide');
+            $scope.$emit('modal:hide');
+            $scope.$emit('auth');
           }
         }, function(data) {
           console.log(data);
@@ -39,6 +39,9 @@ app.controller('LoginCtrl',
         request.save({ username : username, password : pass01 }).$promise.then(function(data) {
           if (data.auth) {
             $rootScope.authUser = username;
+            $scope.$emit('backgroundLayer:hide');
+            $scope.$emit('modal:hide');
+            $scope.$emit('auth');
           }
         }, function(data) {
           console.log(data);
@@ -53,9 +56,8 @@ app.controller('LoginCtrl',
       var request = urlHelper('/api/logout');
 
       request.delete().$promise.then(function(data) {
-          if (!auth) {
-            $rootScope.authUser = null;
-          }
+          $rootScope.authUser = null;
+          $scope.$emit('logout');
         }, function(data) {
         
         });

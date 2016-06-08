@@ -22,6 +22,14 @@ app.config(['$routeProvider', '$locationProvider',
 
   var request = $resource('/api/auth-info');
 
+  $rootScope.$on('auth', function(){
+    $location.path( "/home" );
+  });
+
+  $rootScope.$on('logout', function(){
+    $location.path( "/" );
+  })
+
   $rootScope.$on("$routeChangeStart", function(event, next, current) {
     if ($rootScope.authUser == null ) {
       request.get().$promise.then(

@@ -4,6 +4,8 @@ app.directive('modalWindow', ['$compile', '$templateRequest', function($compile,
     var compileTemplate, templateScope;
 
     scope.$on('modal:show', function(event, modalScope, templateUrl) {
+      scope.$emit('backgroundLayer:show');
+
       $templateRequest(templateUrl).then(function(html){
         scope.modalContent = modalScope;
         templateScope = scope.$new(false);
