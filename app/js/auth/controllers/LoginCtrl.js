@@ -6,6 +6,8 @@ app.controller('LoginCtrl',
       return $resource(url);
     }
 
+    $scope.$emit('backgroundLayer:show');
+
     $scope.switch = 'login';
 
     $scope.switchPanel = function(panel) {
