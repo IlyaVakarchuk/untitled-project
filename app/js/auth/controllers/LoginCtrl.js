@@ -21,6 +21,7 @@ app.controller('LoginCtrl',
         request.save({ username : username, password : password }).$promise.then(function(data) {
           if (data.auth) {
             $rootScope.authUser = username;
+            $scope.$emit('backgroundLayer:hide');
           }
         }, function(data) {
           console.log(data);
