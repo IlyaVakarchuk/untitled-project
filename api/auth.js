@@ -21,4 +21,25 @@ router.post('/login', function(req, res, next) {
   })
 });
 
+router.post('/registartion', function(req, res, next) {
+  UserModel.find({'username' : req.body.username}, function(err, user) {
+    if (err) {
+      res.json({ 'auth' : false, msg : err });
+    } else {
+      if (user.length) {
+        res.json({ 'auth' : false, msg : 'User with same name is already registration' });
+      } else {
+        var newUser = new UserModel({username : req.body.username, password : req.body.password });
+        newUser.save(function(err) {
+          if (err) {
+            res.json({ 'auth' : false, msg : err });
+          } else {
+            res.json({ 'auth' : true, msg : 'Successful registration' });
+          }
+        });
+      }
+    }
+  })
+});
+
 module.exports = router;
