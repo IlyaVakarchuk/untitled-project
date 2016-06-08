@@ -12,26 +12,34 @@ app.config(['$routeProvider', '$locationProvider',
       })
     .when('/home', 
       {
-        templateUrl : 'templates/home.html',
+        templateUrl : 'templates/header.html',
         secure: true
       })
     .otherwise({redirectTo: '/'});;
 
     $locationProvider.html5Mode({enabled : true, requireBase : false});
-}]).run( function($rootScope, $location) {
+}]).run(function($rootScope, $location, $resource) {
 
-    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-console.log(next)
-console.log(next.templateUrl)
-      if ( $rootScope.loggedUser == null ) {
-        // no logged user, we should be going to #login
-        if ( next.templateUrl == "partials/login.html" ) {
-          // already going to #login, no redirect needed
-        } else {
-          // not going to #login, we should redirect now
-          console.log('!!!!!!!!!!');
-          $location.path( "/" );
+  var request = $resource('/api/auth-info');
+
+  $rootScope.$on("$routeChangeStart", function(event, next, current) {
+    if ($rootScope.authUser == null ) {
+      request.get().$promise.then(
+        function(data) {
+          if (data.auth) {
+             $rootScope.authUser = data.user;
+             if ( next.templateUrl == 'templates/greeting.html') {
+              $location.path( "/home" );
+             }
+          } else {
+            if ( next.templateUrl != "partials/login.html" ) {
+              $location.path( "/" );
+            }
+          }
+        }, 
+        function(data) {      
         }
-      }         
-    });
- })
+      ); 
+    };
+  });
+});
