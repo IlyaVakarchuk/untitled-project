@@ -47,6 +47,14 @@ app.controller('LoginCtrl',
     };
 
     $scope.logout = function() {
-     
+      var request = urlHelper('/api/logout');
+
+      request.delete().$promise.then(function(data) {
+          if (!auth) {
+            $rootScope.authUser = null;
+          }
+        }, function(data) {
+        
+        });
     }
   }])

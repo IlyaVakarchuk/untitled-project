@@ -42,4 +42,9 @@ router.post('/registartion', function(req, res, next) {
   })
 });
 
+router.delete('/logout', function(req, res, next) {
+  req.session.destroy();
+  res.json({ 'auth' : false, msg : 'Successful' });
+});
+
 module.exports = router;
