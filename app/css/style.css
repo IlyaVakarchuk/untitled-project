@@ -42,6 +42,91 @@ body {
     background-color: #000;
     z-index: 100; }
 
+#posts-area {
+  width: 100%;
+  margin: 0 auto; }
+  #posts-area #posts-list, #posts-area #post-item {
+    display: inline-block; }
+  #posts-area #posts-list {
+    float: left;
+    width: 40%;
+    margin-left: 20px; }
+    #posts-area #posts-list .post-item {
+      width: 100%;
+      max-width: 420px;
+      background-color: #05A09F;
+      margin: 40px 0; }
+      #posts-area #posts-list .post-item .preview {
+        color: #fff;
+        height: 100px; }
+        #posts-area #posts-list .post-item .preview .title {
+          font-size: 54px; }
+        #posts-area #posts-list .post-item .preview .content {
+          font-size: 28px;
+          font-weight: lighter; }
+        #posts-area #posts-list .post-item .preview div.text, #posts-area #posts-list .post-item .preview div.pic-title {
+          display: inline-block;
+          height: inherit; }
+        #posts-area #posts-list .post-item .preview div.text {
+          width: 70%;
+          float: left; }
+          #posts-area #posts-list .post-item .preview div.text span {
+            padding-left: 10px; }
+        #posts-area #posts-list .post-item .preview div.pic-title {
+          width: 30%;
+          float: right; }
+          #posts-area #posts-list .post-item .preview div.pic-title img {
+            height: 80%;
+            margin-top: 10%;
+            margin-left: 20%; }
+      #posts-area #posts-list .post-item .footer {
+        padding: 15px 10px;
+        color: #036564;
+        font-weight: bolder;
+        text-transform: uppercase; }
+        #posts-area #posts-list .post-item .footer div {
+          display: inline-block;
+          padding: 0 0 0 15px;
+          -webkit-transition: color ease 1s;
+          -moz-transition: color ease 1s;
+          -o-transition: color ease 1s;
+          transition: color ease 1s; }
+        #posts-area #posts-list .post-item .footer div:hover {
+          cursor: pointer;
+          color: #FAF7F3; }
+  #posts-area #post-item {
+    width: 40%;
+    margin-left: 10px;
+    background-color: #05A09F;
+    font-weight: lighter; }
+    #posts-area #post-item .title {
+      width: 100%;
+      height: 100px;
+      position: relative; }
+      #posts-area #post-item .title .img-container {
+        width: 100%;
+        height: 100px;
+        background-size: 100%; }
+      #posts-area #post-item .title .dark-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        top: 0;
+        opacity: 0.5; }
+      #posts-area #post-item .title span {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        color: #fff;
+        font-size: 54px;
+        line-height: 100px;
+        margin-left: 40px; }
+    #posts-area #post-item .content {
+      color: #fff;
+      line-height: 1.7;
+      padding: 20px; }
+
 #greeting {
   width: 100%;
   height: 100vh; }
