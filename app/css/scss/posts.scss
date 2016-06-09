@@ -154,6 +154,29 @@
 
           @include animation('show-comments 0.4s forwards ease-out');
 
+          .waiting-data {
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            background-color: black;
+            opacity: 0.6;
+
+            .spinner {
+              margin: 50px;
+              height: 28px;
+              width: 28px;
+              border: 8px solid #fff;
+              border-right-color: transparent;
+              border-radius: 50%;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              margin-left: -22px;
+              @include animation("waitload 0.8s infinite linear");
+            }
+          }
+
           #hide-block {
             padding: 15px;
             text-align: center;
@@ -244,7 +267,7 @@
                 display: block;
                 width: 15px;
                 height: 15px;
-                background-color: #000;
+                background-color: #84FFFF;
                 border-radius: 50%;
                 margin: 0 auto;
                 margin-top: 2.5px;

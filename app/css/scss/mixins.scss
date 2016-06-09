@@ -7,8 +7,16 @@
 
 @mixin filter($value) {
   -webkit-filter : #{$value};
-  -ms-filter : #{$value};
   -moz-filter : #{$value};
+  -ms-filter : #{$value};
   -o-filter : #{$value};
   filter : #{$value};
+}
+
+@mixin transform($value) {
+  -webkit-transform : #{$value};
+  -moz-transform : #{$value};
+  -ms-transform : #{$value};
+  -o-transform : #{$value};
+  transform : #{$value};
 }

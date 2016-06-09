@@ -1,21 +1,24 @@
 <div class='comments'>
     <div class='preview'>
-      <div class="button" ng-click='switchCommentsBlock()'>
+      <div class="button" ng-click='switchCommentsBlock(post.id)'>
         add comment
       </div>
     </div>
     <div class='list' ng-show='switchComments'>
+      <div class="waiting-data" ng-if="load">
+        <div class="spinner"></div>
+      </div>
       <div id='hide-block' ng-click='switchCommentsBlock()'>
         <div>hide comments</div>
       </div>
-      <div class='comment-item'>
+      <div class='comment-item' ng-repeat="comment in comments">
         <div class='text'>
           <div class='author'>
-            Joker Joker
+            {{ comment.author }}
           </div>
           <div class='comment'>
             <span>
-              HA-HA-HA This is Joke!
+              {{ comment.text }}
             </span>
           </div>
         </div>
@@ -23,7 +26,7 @@
           <img src="img/post/preview/Joker.jpg">
         </div>
         <div class='time'>
-          <span>25 may 2015</span>
+          <span>{{ comment.time }}</span>
         </div>
         <div class='separator-dot'>
           <span>
