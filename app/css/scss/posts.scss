@@ -1,0 +1,258 @@
+#posts-area {
+  width: 100%;
+  margin: 0 auto;
+
+  #posts-list, #post-item {
+    display: inline-block;
+  }
+
+  #posts-list {
+    float: left;
+    width: 40%;
+    margin-left: 20px;
+    .post-item {
+      width: 100%;
+      max-width: 420px;
+      background-color: #05A09F;
+      margin: 40px 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+      .preview {
+        color: #fff;
+        height: 100px;
+        .title {
+          font-size: 54px; 
+        }
+        .content {
+          font-size: 28px;
+          font-weight: lighter;
+        }
+
+        div.text, div.pic-title {
+          display: inline-block;
+          height: inherit;
+        }
+
+        div.text {
+          width: 70%;
+          float: left;
+
+          span {
+            padding-left: 10px;
+          }
+        }
+
+        div.pic-title {
+          width: 30%;
+          float: right;
+
+          img {
+            height: 80%;
+            margin-top: 10%;
+            margin-left: 20%;
+          }
+        }
+      }
+
+      .footer {
+        padding: 15px 10px;
+        color: #036564;
+        font-weight: bolder;
+        text-transform: uppercase;
+        div {
+          display: inline-block;
+          padding: 0 0 0 15px;
+          @include transition('color ease 1s')
+        }
+
+        div:hover {
+          cursor: pointer;
+          color: #FAF7F3;
+        }
+      }
+    } 
+  }
+
+  #post-item {
+    width: 40%;
+    margin-left: 10px;
+    background-color: #05A09F;
+    font-weight: lighter;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+    .title {
+      width: 100%;
+      height: 100px;
+      position: relative;
+      
+      .img-container {
+        width: 100%;
+        height: 100px;
+        background-size: 100%;
+      }
+
+      .dark-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        top: 0;
+        opacity: 0.5;
+      }
+
+      span {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        color: #fff;
+        font-size: 54px;
+        line-height: 100px;
+        margin-left: 40px;
+      }
+    }
+
+    .content-block {
+      position: relative;
+
+      .content {
+        color: #fff;
+        line-height: 1.7;
+        padding: 20px;
+        max-height: 500px;
+        overflow: hidden;
+      }
+
+      .content.blur {
+        @include filter('blur(5px)');
+      }
+
+      .comments {
+        .preview {
+          padding: 15px 10px;
+          color: #036564; 
+          text-transform: uppercase;
+          div {
+            font-weight: 900;
+            display: inline-block;
+            padding: 0 0 0 15px;
+            @include transition('color ease 1s')
+          }
+
+          div:hover {
+            cursor: pointer;
+            color: #FAF7F3;
+          }
+        }
+
+        .list {
+          background-color: #036564;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 70%;
+          box-shadow: 0 0 10px rgba(0,0,0,0.19), 0 0 10px rgba(0,0,0,0.23);
+
+          @include animation('show-comments 0.4s forwards ease-out');
+
+          #hide-block {
+            padding: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            color: #036564;
+            background-color: #05A09F;
+
+            div {
+              font-weight: 900;
+              display: inline-block;
+              padding: 0 0 0 15px;
+              @include transition('color ease 1s')
+            }
+
+            div:hover {
+              cursor: pointer;
+              color: #FAF7F3;
+            }
+          }
+
+          #hide-block:hover {
+            cursor: pointer;
+          }
+
+          .comment-item {
+            padding: 25px;
+            
+            .text, .img {
+              display: inline-block;
+              min-height: 70px;
+            }
+
+            .text {
+              width: 70%;
+              float: left;
+
+              .author {
+                height: 30px;
+                line-height: 30px;
+                padding-left: 15px;
+                color: #84FFFF;
+                font-weight: bolder;
+                font-size: 20px;
+              }
+
+              .comment {
+                min-height: 40px;
+                span {
+                  color: #fff;
+                  padding-left: 5px;
+                  padding-top: 5px;
+                }
+              }
+            }
+
+            .img {
+              max-height: 70px;
+              float: right;
+              width: 25%;
+              text-align: center;
+
+              img {
+                max-height: 70px;
+              }
+            }
+
+            .time {
+              width: 100%;
+              height: 30px;
+              float: left;
+              line-height: 30px;
+              text-align: right;
+
+              span {
+                margin-right: 15px;
+                font-size: 12px;
+                color: #fff;
+              }
+            }
+
+            .separator-dot {
+              width: 100%;
+              height: 20px;
+              float: left;
+
+              span {
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-color: #000;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-top: 2.5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
