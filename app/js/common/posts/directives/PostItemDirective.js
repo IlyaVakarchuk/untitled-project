@@ -3,12 +3,6 @@ app.directive('postItem', ['$compile', '$templateRequest', function($compile, $t
 
     var compileTemplate;
 
-    scope.switchComments = false;
-
-    scope.switchCommentsBlock = function () {
-      scope.switchComments = !scope.switchComments;
-    }
-
     scope.$on('post-item:show', function(event, post) {
       if (compileTemplate !== undefined) {
         clear();

@@ -7,39 +7,7 @@
   <div class="content" ng-class="switchComments ? 'blur' : '' ">
   {{ post.content }}
 </div>
-  <div class='comments'>
-    <div class='preview'>
-      <div class="button" ng-click='switchCommentsBlock()'>
-        add comment
-      </div>
-    </div>
-    <div class='list' ng-show='switchComments'>
-      <div id='hide-block' ng-click='switchCommentsBlock()'>
-        <div>hide comments</div>
-      </div>
-      <div class='comment-item'>
-        <div class='text'>
-          <div class='author'>
-            Joker Joker
-          </div>
-          <div class='comment'>
-            <span>
-              HA-HA-HA This is Joke!
-            </span>
-          </div>
-        </div>
-        <div class='img'>
-          <img src="img/post/preview/Joker.jpg">
-        </div>
-        <div class='time'>
-          <span>25 may 2015</span>
-        </div>
-        <div class='separator-dot'>
-          <span>
-            
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+  <comments-block>
+
+  </comments-block>
 </div>
