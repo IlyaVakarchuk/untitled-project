@@ -1,0 +1,7 @@
+<div id="categories-list" ng-controller="PostCtrl">
+  <div class='categories-item' ng-repeat="categorie in categories">
+    <div ng-click="showPosts(categorie.id)"> {{ categorie.title }} </div>    
+  </div>
+</div>
+
+<post-block></post-block>

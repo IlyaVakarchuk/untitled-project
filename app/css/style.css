@@ -287,9 +287,33 @@ body.unauthorized {
   #modal-auth .registration input[ng-model='password02'] {
     float: right; }
 
+#categories-list {
+  height: 100%;
+  width: 15vw;
+  text-align: center;
+  display: inline-block;
+  float: left; }
+  #categories-list .categories-item {
+    padding: 30px 0;
+    font-size: 30px;
+    color: #036564;
+    font-weight: bolder;
+    text-transform: uppercase; }
+    #categories-list .categories-item div {
+      display: inline-block;
+      padding: 0 0 0 15px;
+      -webkit-transition: color ease 1s;
+      -moz-transition: color ease 1s;
+      -o-transition: color ease 1s;
+      transition: color ease 1s; }
+    #categories-list .categories-item div:hover {
+      cursor: pointer;
+      color: #FAF7F3; }
+
 #posts-area {
-  width: 100%;
-  margin: 0 auto; }
+  width: 85vw;
+  display: inline-block;
+  float: left; }
   #posts-area #posts-list, #posts-area #post-item {
     display: inline-block; }
   #posts-area #posts-list {

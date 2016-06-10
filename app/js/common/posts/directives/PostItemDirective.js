@@ -5,7 +5,7 @@ app.directive('postItem', ['$compile', '$templateRequest', function($compile, $t
 
     scope.$on('post-item:show', function(event, post) {
       if (compileTemplate !== undefined) {
-        clear();
+        destroy();
       }
 
       $templateRequest('templates/post-item.html').then(function(html){
@@ -17,10 +17,10 @@ app.directive('postItem', ['$compile', '$templateRequest', function($compile, $t
       });
     });
 
-    function clear() {
+    function destroy() {
       compileTemplate.remove();
     }
 
-    scope.$on('post-item:hide', clear);
+    scope.$on('post-item:hide', destroy);
   }
 }]);

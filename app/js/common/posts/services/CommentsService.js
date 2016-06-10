@@ -16,9 +16,6 @@ app.service('CommentsService', ['$resource', function($resource) {
     request.get().$promise.then(
       function(data) {
         if (data.comments) {
-          if (comments.length) {
-           // comments = [];
-          }
           comments.push(data.comments);
         }
 

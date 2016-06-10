@@ -2,22 +2,27 @@ app.service('PostService', ['$resource', function($resource) {
 
   var posts = [], service = {};
 
-  function init () {
-    var request = $resource('/api/posts/');
+  service.init = function(categoriesID, waitCallback, successCallback) {
+    if (waitCallback) {
+      waitCallback();
+    }
+
+    var request = $resource('/api/posts/' + categoriesID);
 
     request.get().$promise.then(
       function(data) {
         if (data.posts) {
           posts = data.posts;
+          if (successCallback) {
+            successCallback();
+          }
         }
       }, 
       function(data) {
         console.log(data);      
       }
     ); 
-  }
-
-  init ();
+  };
 
   service.item = function() {
     return post;

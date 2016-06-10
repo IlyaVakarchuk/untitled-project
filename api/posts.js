@@ -18,19 +18,19 @@ router.get('/posts', function(req, res, next) {
 
 router.get('/posts/:id', function(req, res, next) {
   if (req.params.id) {
-    PostModel.find({'id' : req.params.id}, function(err, post) {
+    PostModel.find({'categories' : req.params.id}, function(err, posts) {
       if (err) {
         res.json({ msg : err });
       } else {
-        if (post.length) {
-          res.json({ post : post[0] });
+        if (posts.length) {
+          res.json({ posts : posts });
         } else {
-          res.json({ msg : 'Incorrect ID of post' });      
+          res.json({ msg : 'Incorrect ID of posts' });      
         }
       }
     })
   } else {
-    res.json({ msg : 'Setup ID of post' });
+    res.json({ msg : 'Setup ID of posts' });
   }
 });
 

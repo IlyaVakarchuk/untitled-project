@@ -4,8 +4,25 @@ app.directive('postBlock', ['$compile', '$templateRequest', 'PostService', funct
     controller : 'PostCtrl',
     templateUrl : 'templates/post.html',
     link : function(scope, element, attr) {
-      scope.length = PostService.list().length;
-      scope.list = PostService.list();
+
+      var compileTemplate, templateScope;
+
+      scope.$on('posts:show', function(event, categoriesID) {
+        if (compileTemplate !== undefined) {
+          destroy();
+        }
+
+        PostService.init(categoriesID, function() {
+
+        }, function() {
+          scope.length = PostService.list().length;
+          scope.posts = PostService.list();
+        });
+      });
+
+      function destroy() {
+        compileTemplate.remove();
+      }
     }
   }
 }]);
