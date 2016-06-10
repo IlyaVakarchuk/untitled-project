@@ -12,7 +12,7 @@ app.config(['$routeProvider', '$locationProvider',
       })
     .when('/home', 
       {
-        templateUrl : 'templates/header.html',
+        templateUrl : 'templates/home.html',
         secure: true
       })
     .otherwise({redirectTo: '/'});;
