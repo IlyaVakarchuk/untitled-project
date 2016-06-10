@@ -42,6 +42,35 @@ body {
       top: 45vh;
       position: relative;
     }
+
+    .title {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 50px;
+      color: #fff;
+
+      .level-01, .level-02 {
+        padding: 20px 0;
+      }
+
+      .level-01 {
+        margin-top: 10vh;
+        text-transform: capitalize;
+      }
+
+      .level-02 {
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      .level-02:before {
+        content: '< '
+      }
+
+      .level-02:after {
+        content: ' />'
+      }
+    }
   }
 
   .footer {

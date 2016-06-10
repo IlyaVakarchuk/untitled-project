@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300&subset=latin,cyrillic-ext);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,700);
 @-webkit-keyframes waitload {
   0% {
     -webkit-transform: rotate(0deg);
@@ -147,6 +148,23 @@ body {
       width: 300px;
       top: 45vh;
       position: relative; }
+    #greeting .header .title {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      font-size: 50px;
+      color: #fff; }
+      #greeting .header .title .level-01, #greeting .header .title .level-02 {
+        padding: 20px 0; }
+      #greeting .header .title .level-01 {
+        margin-top: 10vh;
+        text-transform: capitalize; }
+      #greeting .header .title .level-02 {
+        font-family: 'Orbitron', sans-serif; }
+      #greeting .header .title .level-02:before {
+        content: "< "; }
+      #greeting .header .title .level-02:after {
+        content: " />"; }
   #greeting .footer {
     height: 35vh;
     width: 100%;
