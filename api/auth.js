@@ -10,7 +10,7 @@ router.post('/login', function(req, res, next) {
       if (user.length) {
         if (user[0].password == req.body.password) {
           req.session.user = user[0].username;
-          res.json({ 'auth' : true });
+          res.json({ 'auth' : true, msg : 'Wellcome again!' });
         } else {
           res.json({ 'auth' : false, msg : 'Incorrect username or password' });
         }
@@ -44,7 +44,7 @@ router.post('/registartion', function(req, res, next) {
 
 router.delete('/logout', function(req, res, next) {
   req.session.destroy();
-  res.json({ 'auth' : false, msg : 'Successful' });
+  res.json({ 'auth' : false, msg : 'Goodbye!' });
 });
 
 module.exports = router;

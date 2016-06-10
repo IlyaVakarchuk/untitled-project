@@ -10,6 +10,23 @@ body {
 
   @include user-select('none');
 
+  #notification {
+    position:  absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: #40332A;
+    z-index: 1000;
+    @include animation('show-notification 0.4s forwards ease-out'); 
+
+    .notification-content {
+      color: #F0C948;
+      font-size: 30px;
+      text-align: center;
+      line-height: 20vh;
+    }
+  }
+
   #content-wraper {
     width: 100%;
     height: 100%;

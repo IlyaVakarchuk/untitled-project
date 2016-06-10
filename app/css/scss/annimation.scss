@@ -54,12 +54,20 @@
   }
 }
 
-
 @include keyframes(show-post-item) {
   0% {
     right: -100%
   }
   100% {
     right: 0%
+  }
+}
+
+@include keyframes(show-notification) {
+  0% {
+    bottom: -20vh;
+  }
+  100% {
+    bottom: 0;
   }
 }

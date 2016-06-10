@@ -22,6 +22,9 @@ app.controller('LoginCtrl',
             $scope.$emit('backgroundLayer:hide');
             $scope.$emit('modal:hide');
             $scope.$emit('auth');
+            $scope.$emit('notify:show', data.msg);
+          } else {
+            $scope.$emit('notify:show', data.msg);
           }
         }, function(data) {
           console.log(data);
@@ -42,13 +45,16 @@ app.controller('LoginCtrl',
             $scope.$emit('backgroundLayer:hide');
             $scope.$emit('modal:hide');
             $scope.$emit('auth');
+            $scope.$emit('notify:show', data.msg);
+          } else {
+            $scope.$emit('notify:show', data.msg);
           }
         }, function(data) {
           console.log(data);
         });
 
       } else {
-
+        $scope.$emit('notify:show', 'Incorrect password entered');
       }
     };
 
@@ -58,6 +64,7 @@ app.controller('LoginCtrl',
       request.delete().$promise.then(function(data) {
           $rootScope.authUser = null;
           $scope.$emit('logout');
+          $scope.$emit('notify:show', data.msg);
         }, function(data) {
         
         });

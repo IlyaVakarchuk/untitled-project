@@ -19,11 +19,13 @@
   <script src='js/common/posts/services/CommentsService.js'></script>
   <script src='js/common/posts/services/CategoriesService.js'></script>  
   <script src='js/common/posts/controllers/PostCtrl.js'></script>  
+
+  <script src='js/common/notification/directives/NotifyDirective.js'></script>  
   <script src='js/common/MainCtrl.js'></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
-<body ng-app="app" background-layer modal-window class='unauthorized'>
+<body ng-app="app" background-layer modal-window notify-system class='unauthorized'>
   <div id="content-wraper" >
     <div ng-view></div>
   </div>
