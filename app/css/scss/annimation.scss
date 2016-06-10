@@ -53,3 +53,13 @@
     height: 70%
   }
 }
+
+
+@include keyframes(show-post-item) {
+  0% {
+    right: -100%
+  }
+  100% {
+    right: 0%
+  }
+}

@@ -3,10 +3,16 @@ app.directive('postItem', ['$compile', '$templateRequest', function($compile, $t
 
     var compileTemplate;
 
+    scope.close = function() {
+      destroy();
+    }
+
     scope.$on('post-item:show', function(event, post) {
       if (compileTemplate !== undefined) {
         destroy();
       }
+
+      scope.$emit('backgroundLayer:show');
 
       $templateRequest('templates/post-item.html').then(function(html){
         templateScope = scope.$new(false);
@@ -19,6 +25,7 @@ app.directive('postItem', ['$compile', '$templateRequest', function($compile, $t
 
     function destroy() {
       compileTemplate.remove();
+      scope.$emit('backgroundLayer:hide');
     }
 
     scope.$on('post-item:hide', destroy);

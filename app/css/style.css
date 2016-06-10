@@ -91,6 +91,26 @@
     height: 0%; }
   100% {
     height: 70%; } }
+@-webkit-keyframes show-post-item {
+  0% {
+    right: -100%; }
+  100% {
+    right: 0%; } }
+@-moz-keyframes show-post-item {
+  0% {
+    right: -100%; }
+  100% {
+    right: 0%; } }
+@-o-keyframes show-post-item {
+  0% {
+    right: -100%; }
+  100% {
+    right: 0%; } }
+@keyframes show-post-item {
+  0% {
+    right: -100%; }
+  100% {
+    right: 0%; } }
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -318,7 +338,7 @@ body.unauthorized {
     display: inline-block; }
   #posts-area #posts-list {
     float: left;
-    width: 40%;
+    width: 50%;
     margin-left: 20px; }
     #posts-area #posts-list .post-item {
       width: 100%;
@@ -365,18 +385,29 @@ body.unauthorized {
           cursor: pointer;
           color: #FAF7F3; }
   #posts-area #post-item {
-    width: 40%;
-    margin-left: 10px;
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    top: 10%;
+    left: 10%;
     background-color: #05A09F;
     font-weight: lighter;
+    z-index: 101;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     #posts-area #post-item .title {
       width: 100%;
-      height: 100px;
+      height: 25%;
       position: relative; }
+      #posts-area #post-item .title i {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer; }
       #posts-area #post-item .title .img-container {
         width: 100%;
-        height: 100px;
+        height: 100%;
         background-size: 100%; }
       #posts-area #post-item .title .dark-layer {
         position: absolute;
@@ -394,75 +425,27 @@ body.unauthorized {
         line-height: 100px;
         margin-left: 40px; }
     #posts-area #post-item .content-block {
-      position: relative; }
+      position: relative;
+      height: 75%; }
       #posts-area #post-item .content-block .content {
         color: #fff;
         line-height: 1.7;
-        padding: 20px;
-        max-height: 500px;
-        overflow: hidden; }
+        padding: 2%;
+        overflow: hidden;
+        height: 81%; }
       #posts-area #post-item .content-block .content.blur {
         -webkit-filter: blur(5px);
         -moz-filter: blur(5px);
         -ms-filter: blur(5px);
         -o-filter: blur(5px);
         filter: blur(5px); }
-      #posts-area #post-item .content-block .comments .preview {
-        padding: 15px 10px;
-        color: #036564;
-        text-transform: uppercase; }
-        #posts-area #post-item .content-block .comments .preview div {
-          font-weight: 900;
-          display: inline-block;
-          padding: 0 0 0 15px;
-          -webkit-transition: color ease 1s;
-          -moz-transition: color ease 1s;
-          -o-transition: color ease 1s;
-          transition: color ease 1s; }
-        #posts-area #post-item .content-block .comments .preview div:hover {
-          cursor: pointer;
-          color: #FAF7F3; }
-      #posts-area #post-item .content-block .comments .list {
-        background-color: #036564;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 70%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.19), 0 0 10px rgba(0, 0, 0, 0.23);
-        -webkit-animation: show-comments 0.4s forwards ease-out;
-        -moz-animation: show-comments 0.4s forwards ease-out;
-        -o-animation: show-comments 0.4s forwards ease-out;
-        animation: show-comments 0.4s forwards ease-out; }
-        #posts-area #post-item .content-block .comments .list .waiting-data {
-          width: 100%;
-          height: 100%;
-          z-index: 2;
-          position: absolute;
-          background-color: black;
-          opacity: 0.6; }
-          #posts-area #post-item .content-block .comments .list .waiting-data .spinner {
-            margin: 50px;
-            height: 28px;
-            width: 28px;
-            border: 8px solid #fff;
-            border-right-color: transparent;
-            border-radius: 50%;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            margin-left: -22px;
-            -webkit-animation: waitload 0.8s infinite linear;
-            -moz-animation: waitload 0.8s infinite linear;
-            -o-animation: waitload 0.8s infinite linear;
-            animation: waitload 0.8s infinite linear; }
-        #posts-area #post-item .content-block .comments .list #hide-block {
-          padding: 15px;
-          text-align: center;
-          text-transform: uppercase;
-          position: relative;
+      #posts-area #post-item .content-block .comments {
+        height: 15%; }
+        #posts-area #post-item .content-block .comments .preview {
+          padding: 15px 10px;
           color: #036564;
-          background-color: #05A09F; }
-          #posts-area #post-item .content-block .comments .list #hide-block div {
+          text-transform: uppercase; }
+          #posts-area #post-item .content-block .comments .preview div {
             font-weight: 900;
             display: inline-block;
             padding: 0 0 0 15px;
@@ -470,60 +453,111 @@ body.unauthorized {
             -moz-transition: color ease 1s;
             -o-transition: color ease 1s;
             transition: color ease 1s; }
-          #posts-area #post-item .content-block .comments .list #hide-block div:hover {
+          #posts-area #post-item .content-block .comments .preview div:hover {
             cursor: pointer;
             color: #FAF7F3; }
-        #posts-area #post-item .content-block .comments .list #hide-block:hover {
-          cursor: pointer; }
-        #posts-area #post-item .content-block .comments .list .comment-item {
-          padding: 25px; }
-          #posts-area #post-item .content-block .comments .list .comment-item .text, #posts-area #post-item .content-block .comments .list .comment-item .img {
-            display: inline-block;
-            min-height: 70px; }
-          #posts-area #post-item .content-block .comments .list .comment-item .text {
-            width: 70%;
-            float: left; }
-            #posts-area #post-item .content-block .comments .list .comment-item .text .author {
-              height: 30px;
-              line-height: 30px;
-              padding-left: 15px;
-              color: #84FFFF;
-              font-weight: bolder;
-              font-size: 20px; }
-            #posts-area #post-item .content-block .comments .list .comment-item .text .comment {
-              min-height: 40px; }
-              #posts-area #post-item .content-block .comments .list .comment-item .text .comment span {
-                color: #fff;
-                padding-left: 5px;
-                padding-top: 5px; }
-          #posts-area #post-item .content-block .comments .list .comment-item .img {
-            max-height: 70px;
-            float: right;
-            width: 25%;
-            text-align: center; }
-            #posts-area #post-item .content-block .comments .list .comment-item .img img {
-              max-height: 70px; }
-          #posts-area #post-item .content-block .comments .list .comment-item .time {
+        #posts-area #post-item .content-block .comments .list {
+          background-color: #036564;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 70%;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.19), 0 0 10px rgba(0, 0, 0, 0.23);
+          -webkit-animation: show-comments 0.4s forwards ease-out;
+          -moz-animation: show-comments 0.4s forwards ease-out;
+          -o-animation: show-comments 0.4s forwards ease-out;
+          animation: show-comments 0.4s forwards ease-out; }
+          #posts-area #post-item .content-block .comments .list .waiting-data {
             width: 100%;
-            height: 30px;
-            float: left;
-            line-height: 30px;
-            text-align: right; }
-            #posts-area #post-item .content-block .comments .list .comment-item .time span {
-              margin-right: 15px;
-              font-size: 12px;
-              color: #fff; }
-          #posts-area #post-item .content-block .comments .list .comment-item .separator-dot {
-            width: 100%;
-            height: 20px;
-            float: left; }
-            #posts-area #post-item .content-block .comments .list .comment-item .separator-dot span {
-              display: block;
-              width: 15px;
-              height: 15px;
-              background-color: #84FFFF;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+            background-color: black;
+            opacity: 0.6; }
+            #posts-area #post-item .content-block .comments .list .waiting-data .spinner {
+              margin: 50px;
+              height: 28px;
+              width: 28px;
+              border: 8px solid #fff;
+              border-right-color: transparent;
               border-radius: 50%;
-              margin: 0 auto;
-              margin-top: 2.5px; }
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              margin-left: -22px;
+              -webkit-animation: waitload 0.8s infinite linear;
+              -moz-animation: waitload 0.8s infinite linear;
+              -o-animation: waitload 0.8s infinite linear;
+              animation: waitload 0.8s infinite linear; }
+          #posts-area #post-item .content-block .comments .list #hide-block {
+            padding: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+            color: #036564;
+            background-color: #05A09F; }
+            #posts-area #post-item .content-block .comments .list #hide-block div {
+              font-weight: 900;
+              display: inline-block;
+              padding: 0 0 0 15px;
+              -webkit-transition: color ease 1s;
+              -moz-transition: color ease 1s;
+              -o-transition: color ease 1s;
+              transition: color ease 1s; }
+            #posts-area #post-item .content-block .comments .list #hide-block div:hover {
+              cursor: pointer;
+              color: #FAF7F3; }
+          #posts-area #post-item .content-block .comments .list #hide-block:hover {
+            cursor: pointer; }
+          #posts-area #post-item .content-block .comments .list .comment-item {
+            padding: 25px; }
+            #posts-area #post-item .content-block .comments .list .comment-item .text, #posts-area #post-item .content-block .comments .list .comment-item .img {
+              display: inline-block;
+              min-height: 70px; }
+            #posts-area #post-item .content-block .comments .list .comment-item .text {
+              width: 70%;
+              float: left; }
+              #posts-area #post-item .content-block .comments .list .comment-item .text .author {
+                height: 30px;
+                line-height: 30px;
+                padding-left: 15px;
+                color: #84FFFF;
+                font-weight: bolder;
+                font-size: 20px; }
+              #posts-area #post-item .content-block .comments .list .comment-item .text .comment {
+                min-height: 40px; }
+                #posts-area #post-item .content-block .comments .list .comment-item .text .comment span {
+                  color: #fff;
+                  padding-left: 5px;
+                  padding-top: 5px; }
+            #posts-area #post-item .content-block .comments .list .comment-item .img {
+              max-height: 70px;
+              float: right;
+              width: 25%;
+              text-align: center; }
+              #posts-area #post-item .content-block .comments .list .comment-item .img img {
+                max-height: 70px; }
+            #posts-area #post-item .content-block .comments .list .comment-item .time {
+              width: 100%;
+              height: 30px;
+              float: left;
+              line-height: 30px;
+              text-align: right; }
+              #posts-area #post-item .content-block .comments .list .comment-item .time span {
+                margin-right: 15px;
+                font-size: 12px;
+                color: #fff; }
+            #posts-area #post-item .content-block .comments .list .comment-item .separator-dot {
+              width: 100%;
+              height: 20px;
+              float: left; }
+              #posts-area #post-item .content-block .comments .list .comment-item .separator-dot span {
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-color: #84FFFF;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-top: 2.5px; }
 
 /*# sourceMappingURL=style.css.map */

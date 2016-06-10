@@ -1,13 +1,16 @@
-<div class="title">
-  <div class='img-container'></div>
-  <div class='dark-layer'></div>
-  <span>{{ post.title }}</span>
-</div>
-<div class="content-block">
-  <div class="content" ng-class="switchComments ? 'blur' : '' ">
-  {{ post.content }}
-</div>
-  <comments-block ng->
+<div id="post-item">
+  <div class="title">
+    <div class='img-container'></div>
+    <div class='dark-layer'></div>
+    <span>{{ post.title }}</span>
+    <i class="fa fa-times" aria-hidden="true" ng-click="close()"></i>
+  </div>
+  <div class="content-block">
+    <div class="content" ng-class="switchComments ? 'blur' : '' ">
+    {{ post.content }}
+  </div>
+    <comments-block>
 
-  </comments-block>
+    </comments-block>
+  </div>
 </div>
