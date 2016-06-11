@@ -1,0 +1,11 @@
+{
+  "name": "untitled",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "angular-resource": "^1.5.6",
+    "angular-perfect-scrollbar": "^0.0.4"
+  },
+  "private": true
+}

@@ -24,7 +24,7 @@ app.set('view engine', 'jade');
 
 app.use(session('redis://localhost:6379', 'mysecret'))
 
-app.use('/vendor', express.static(__dirname + '/node_modules'));
+app.use('/vendor', express.static(__dirname + '/bower_components'));
 app.use('/js', express.static(__dirname + '/app/js'));
 app.use('/css', express.static(__dirname + '/app/css'));
 app.use('/img', express.static(__dirname + '/app/img'));
