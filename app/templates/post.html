@@ -1,27 +1,31 @@
 <div id="posts-area">
-  <div id='posts-list'>
+  <div id='posts-list' >
+  <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="0.5" min-scrollbar-length="10">
     <div ng-repeat="item in posts">
-      <div class='post-item' data-id='{{ item.id }}'>
-        <div class='preview'>
-          <div class='text'>
-            <div class='title'><span>{{ item.title }}</span></div>
-            <div class='content'><span>{{ item.content | limitTo: 20 }}{{ item.content.length > 20 ? '...' : '' }}</span></div>
+        <div class='post-item' data-id='{{ item.id }}'>
+          <div class='preview'>
+            <div class='text'>
+              <div class='title'><span>{{ item.title | limitTo: 13 }}{{ item.title.length > 13 ? '...' : '' }}</span></div>
+              <div class='content'><span>{{ item.content | limitTo: 20 }}{{ item.content.length > 20 ? '...' : '' }}</span></div>
+            </div>
+            <div class='pic-title'>
+              <img src="img/post/preview/{{ item.img }}">
+            </div>
           </div>
-          <div class='pic-title'>
-            <img src="img/post/preview/{{ item.previewImg }}">
+          <div class='footer'>
+            <div class="more-info" ng-click="showPost(item)">
+              read more
+            </div>
+            <div class="comment">
+              add comment
+            </div>
           </div>
         </div>
-        <div class='footer'>
-          <div class="more-info" ng-click="showPost(item)">
-            read more
-          </div>
-          <div class="comment">
-            add comment
-          </div>
-        </div>
-      </div>
     </div>
+  </perfect-scrollbar>
   </div>
+
+
   
   <post-item></post-item>
 </div>

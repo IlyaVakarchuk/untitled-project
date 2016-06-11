@@ -18,7 +18,8 @@ app.directive('postItem', ['$compile', '$templateRequest', function($compile, $t
         templateScope = scope.$new(false);
         scope.post = post;
         compileTemplate = $compile(html)(templateScope);
-        angular.element(element).append(compileTemplate)
+        angular.element(element).append(compileTemplate);
+        console.log(element.find('.content'))
         element.find('.img-container').css('background-image' , 'url(img/post/' + post.img + ')')
       });
     });

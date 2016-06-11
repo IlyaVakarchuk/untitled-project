@@ -378,37 +378,56 @@ body.unauthorized {
 
 #categories-list {
   height: 100%;
-  width: 15vw;
   text-align: center;
   display: inline-block;
-  float: left; }
+  float: left;
+  width: 35vw; }
   #categories-list .categories-item {
     padding: 30px 0;
     font-size: 30px;
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #036564;
     font-weight: bolder;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    border-right: 1px solid #000; }
     #categories-list .categories-item div {
-      display: inline-block;
       padding: 0 0 0 15px;
       -webkit-transition: color ease 1s;
       -moz-transition: color ease 1s;
       -o-transition: color ease 1s;
       transition: color ease 1s; }
-    #categories-list .categories-item div:hover {
-      cursor: pointer;
-      color: #FAF7F3; }
+    #categories-list .categories-item img {
+      height: 100%;
+      padding-left: 10px; }
+    #categories-list .categories-item:hover {
+      cursor: pointer; }
+      #categories-list .categories-item:hover div {
+        cursor: pointer;
+        color: #FAF7F3; }
+      #categories-list .categories-item:hover img {
+        height: 150%; }
 
 #posts-area {
-  width: 85vw;
-  display: inline-block;
-  float: left; }
+  width: 85vw; }
   #posts-area #posts-list, #posts-area #post-item {
     display: inline-block; }
   #posts-area #posts-list {
     float: left;
     width: 50%;
+    height: 80vh;
     margin-left: 20px; }
+    #posts-area #posts-list .scroller {
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden;
+      position: relative; }
+    #posts-area #posts-list .post-item:first-child {
+      margin-top: 0; }
     #posts-area #posts-list .post-item {
       width: 100%;
       max-width: 420px;
@@ -419,9 +438,11 @@ body.unauthorized {
         color: #fff;
         height: 100px; }
         #posts-area #posts-list .post-item .preview .title {
-          font-size: 54px; }
+          margin-top: 10px;
+          font-size: 34px; }
         #posts-area #posts-list .post-item .preview .content {
-          font-size: 28px;
+          margin-top: 10px;
+          font-size: 24px;
           font-weight: lighter; }
         #posts-area #posts-list .post-item .preview div.text, #posts-area #posts-list .post-item .preview div.pic-title {
           display: inline-block;
@@ -473,11 +494,13 @@ body.unauthorized {
         right: 5%;
         color: #fff;
         font-size: 30px;
-        cursor: pointer; }
+        cursor: pointer;
+        z-index: 3; }
       #posts-area #post-item .title .img-container {
         width: 100%;
         height: 100%;
-        background-size: 100%; }
+        background-size: 100%;
+        background-position-y: 50%; }
       #posts-area #post-item .title .dark-layer {
         position: absolute;
         width: 100%;
@@ -502,6 +525,10 @@ body.unauthorized {
         padding: 2%;
         overflow: hidden;
         height: 81%; }
+        #posts-area #post-item .content-block .content .scroller {
+          height: 100%;
+          overflow-y: hidden;
+          position: relative; }
       #posts-area #post-item .content-block .content.blur {
         -webkit-filter: blur(5px);
         -moz-filter: blur(5px);

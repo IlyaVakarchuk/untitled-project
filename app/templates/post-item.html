@@ -7,8 +7,10 @@
   </div>
   <div class="content-block">
     <div class="content" ng-class="switchComments ? 'blur' : '' ">
-    {{ post.content }}
-  </div>
+      <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="0.5" min-scrollbar-length="10">
+        {{ post.content }}
+      </perfect-scrollbar>
+    </div>
     <comments-block>
 
     </comments-block>

@@ -7,6 +7,15 @@ app.directive('postBlock', ['$compile', '$templateRequest', 'PostService', funct
 
       var compileTemplate, templateScope;
 
+      scope.scrollConfig = {
+        autoHideScrollbar: false,
+        theme: 'minimal-dark',
+        advanced:{
+            updateOnContentResize: true
+        },
+        scrollInertia: 0
+      }
+
       scope.$on('posts:show', function(event, categoriesID) {
         if (compileTemplate !== undefined) {
           destroy();
@@ -17,6 +26,7 @@ app.directive('postBlock', ['$compile', '$templateRequest', 'PostService', funct
         }, function() {
           scope.length = PostService.list().length;
           scope.posts = PostService.list();
+
         });
       });
 
