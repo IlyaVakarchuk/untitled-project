@@ -75,7 +75,7 @@
     .post-item {
       width: 100%;
       max-width: 420px;
-      background-color: #05A09F;
+      background-color: #FBC049;
       margin: 40px 0;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
@@ -143,7 +143,7 @@
     position: absolute;
     top: 10%;
     left: 10%;
-    background-color: #05A09F;
+    background-color: #FBC049;
     font-weight: lighter;
     z-index: 101;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -156,7 +156,7 @@
       i {
         position: absolute;
         top: 5%;
-        right: 5%;
+        right: 2%;
         color: #fff;
         font-size: 30px;
         cursor: pointer;
@@ -232,7 +232,7 @@
         }
 
         .list {
-          background-color: #036564;
+          background-color: #fff9c4;
           position: absolute;
           bottom: 0;
           width: 100%;
@@ -270,7 +270,7 @@
             text-transform: uppercase;
             position: relative;
             color: #036564;
-            background-color: #05A09F;
+            background-color: #FBC049;
 
             div {
               font-weight: 900;
