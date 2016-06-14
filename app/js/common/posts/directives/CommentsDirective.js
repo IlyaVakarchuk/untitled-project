@@ -30,6 +30,10 @@ app.directive('commentsBlock', ['$compile', '$templateRequest', 'CommentsService
         }
       };
 
+      scope.addComments = function() {
+        
+      }
+
     }
   }
 }]);

@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
 
-    color: #036564;
+    color: #000;
     font-weight: bolder;
     text-transform: uppercase;
 
@@ -360,6 +360,21 @@
                 margin-top: 2.5px;
               }
             }
+          }
+        }
+
+        .save-comment {
+          width: 100%;
+          height: 30px;
+          color: #fff;
+          text-align: center;
+
+          div {
+            width: 30%;
+            height: 100%;
+            background-color: #FBC049;
+            line-height: 30px;
+            margin: 0 auto;
           }
         }
       }

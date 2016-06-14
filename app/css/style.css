@@ -137,7 +137,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  background-color: #f9db79;
+  background-color: #FFD88A;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -174,7 +174,7 @@ body {
     z-index: 100; }
   body .simple-header {
     height: 5vh;
-    padding: 30px;
+    padding: 40px 30px;
     border-top: 3vh solid #2c2a2b; }
     body .simple-header nav {
       height: 100%;
@@ -184,20 +184,25 @@ body {
       font-family: 'Lobster', cursive;
       font-size: 24px; }
       body .simple-header nav a {
+        height: 100%;
         text-decoration: none;
         text-transform: uppercase;
         color: #000;
+        cursor: pointer;
         -webkit-transition: color ease 1s;
         -moz-transition: color ease 1s;
         -o-transition: color ease 1s;
         transition: color ease 1s; }
+        body .simple-header nav a#logo img {
+          height: 200%;
+          position: relative;
+          top: -50%; }
         body .simple-header nav a:link, body .simple-header nav a:visited, body .simple-header nav a:active {
           color: #000; }
         body .simple-header nav a:hover {
           color: #fff; }
         body .simple-header nav a#auth {
-          font-family: 'Orbitron', sans-serif;
-          cursor: pointer; }
+          font-family: 'Orbitron', sans-serif; }
 
 #greeting {
   width: 100%;
@@ -424,7 +429,7 @@ body.unauthorized footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #036564;
+    color: #000;
     font-weight: bolder;
     text-transform: uppercase;
     border-right: 1px solid #000; }
@@ -688,5 +693,16 @@ body.unauthorized footer {
                 border-radius: 50%;
                 margin: 0 auto;
                 margin-top: 2.5px; }
+        #posts-area #post-item .content-block .comments .save-comment {
+          width: 100%;
+          height: 30px;
+          color: #fff;
+          text-align: center; }
+          #posts-area #post-item .content-block .comments .save-comment div {
+            width: 30%;
+            height: 100%;
+            background-color: #FBC049;
+            line-height: 30px;
+            margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

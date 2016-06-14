@@ -36,6 +36,7 @@ app.use('/api', require('./api/auth'));
 app.use('/api', require('./api/posts'));
 app.use('/api', require('./api/comments'));
 app.use('/api', require('./api/categories'));
+app.use('/api', require('./api/films'));
 
 
 app.all('/*', function(req, res) {
